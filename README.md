@@ -1,12 +1,11 @@
 # docbt-patched-up
 
-Revived and updated patches for [Morphe](https://morphe.software). Brings back functionality that was lost due to app updates or abandoned patch sources.
+Revived and updated patches for [Morphe](https://morphe.software).
 
 &nbsp;
 ## About
 
-This repository contains patches for Android apps, compatible with the [Morphe Patcher](https://morphe.software).
-Patches are kept up to date and revived when upstream sources are no longer maintained.
+The goal of this project is to migrate existing patches to Morphe and keep them compatible with the latest version of the original apps. Regular updates — stay tuned.
 
 ### Patches
 
