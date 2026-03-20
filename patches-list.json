@@ -1,4 +1,43 @@
 {
-  "version": "",
-  "patches": []
+  "version": "1.0.0",
+  "patches": [
+    {
+      "name": "Enable CustomTabs",
+      "description": "Enables CustomTabs to open articles in your default browser.",
+      "use": true,
+      "dependencies": [],
+      "compatiblePackages": {
+        "com.google.android.apps.magazines": [
+          "5.154.0.880997081"
+        ]
+      },
+      "options": []
+    },
+    {
+      "name": "Example Patch",
+      "description": "Example patch to start with.",
+      "use": true,
+      "dependencies": [],
+      "compatiblePackages": {
+        "com.example.app": [
+          "1.0.0"
+        ]
+      },
+      "options": []
+    },
+    {
+      "name": "GmsCore support",
+      "description": "Allows Google News to sign in via MicroG (GmsCore) instead of Google Play Services when installed under a renamed package.",
+      "use": true,
+      "dependencies": [
+        "ResourcePatch"
+      ],
+      "compatiblePackages": {
+        "com.google.android.apps.magazines": [
+          "5.154.0.880997081"
+        ]
+      },
+      "options": []
+    }
+  ]
 }
