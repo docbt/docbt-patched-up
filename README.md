@@ -50,6 +50,12 @@ Contributions are welcome. Please read the [contribution guidelines](CONTRIBUTIN
 ```
 
 &nbsp;
+## Credits
+
+- [ReVanced](https://github.com/ReVanced/revanced-patches) — Original patches (GPL v3)
+- [Morphe](https://morphe.software) — Patcher framework and ecosystem
+
+&nbsp;
 ## License
 
 This project is licensed under the [GNU General Public License v3.0](LICENSE), with additional conditions under GPLv3 Section 7:
