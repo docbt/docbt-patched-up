@@ -1,76 +1,49 @@
-# 👋🧩 Morphe Patches template
+# docbt-patched-up
 
-Template repository for Morphe Patches.
+Revived and updated patches for [Morphe](https://morphe.software). Brings back functionality that was lost due to app updates or abandoned patch sources.
 
 &nbsp;
-## ❓ About
+## About
 
-This is a template to create a new Morphe Patches repository.  
-The repository can have multiple patches, and patches from other repositories can be used together.
+This repository contains patches for Android apps, compatible with the [Morphe Patcher](https://morphe.software).
+Patches are kept up to date and revived when upstream sources are no longer maintained.
 
-For an example repository, see [Morphe Patches](https://github.com/MorpheApp/morphe-patches).
+### Patches
 
-Morphe Patches template is based off the prior work of [ReVanced](https://github.com/ReVanced/revanced-patches-template).
-All modifications made by Morphe, along with their dates, can be found in the Git history.
+#### Google News / Magazines (`com.google.android.apps.magazines`)
 
+| Patch | Description |
+|---|---|
+| Enable Custom Tabs | Opens articles in your default browser instead of the in-app reader |
+| GmsCore Support | Enables Google login via MicroG on renamed-package installations |
 
-## 🚀 Get started
+&nbsp;
+## How to use
 
-To start using this template, follow these steps:
+Click here to add these patches to Morphe:
+**https://morphe.software/add-source?github=docbt/docbt-patched-up**
 
-1. [Create a new repository using this template](https://github.com/new?template_name=morphe-patches-template&template_owner=MorpheApp)
-2. Set up the [build.gradle.kts](patches/build.gradle.kts) file (Specifically, the [group of the project](patches/build.gradle.kts#L1),
-and the [About](patches/build.gradle.kts#L5-L11))
-3. Set up the [README.md](README.md) file[^1] (e.g, title, description, license, summary of the patches
-that are included in the repository), the [issue templates](.github/ISSUE_TEMPLATE)[^2]  and the [contribution guidelines](CONTRIBUTING.md)[^3]
-4. Choose a name for your patches project. Keep in mind you must use a unique name that does not imply or suggest authorship by the Morphe open source project.
-   See the [NOTICE](NOTICE) for details.
-5. (Optional): Add `patches-bundle.png` to the project if you want a custom icon to show in
-   Morphe Manager instead of your GitHub profile avatar.
+Or manually add this URL as a patch source in Morphe:
+**https://github.com/docbt/docbt-patched-up**
 
-🎉 You are now ready to start creating patches!
+&nbsp;
+## Contributing
 
-## 🧑‍💻 Usage
+Contributions are welcome. Please read the [contribution guidelines](CONTRIBUTING.md) before submitting a pull request.
 
-To develop and release Morphe Patches using this template, some things need to be considered:
+&nbsp;
+## Building
 
-- Development starts in feature branches. Once a feature branch is ready, it is squashed and merged into the `dev` branch
-- The `dev` branch is merged into the `main` branch once it is ready for release
-- Semantic versioning is used to version Morphe Patches.
-- [Semantic commit](https://kapeli.com/cheat_sheets/Semantic_Commits.docset/Contents/Resources/Documents/index) messages are used for commits
-- Commits on the `dev` branch and `main` branch are automatically released
-via the [release.yml](.github/workflows/release.yml) workflow, which is also responsible for generating the changelog
-and updating the version of Morphe Patches. It is triggered by pushing to the `dev` or `main` branch.
-The workflow uses the `publish` task to publish the release of Morphe Patches
-- The `buildAndroid` task is used to build Morphe Patches so that it can be used on Android.
-The `publish` task depends on the `buildAndroid` task, so it will be run automatically when publishing a release.
+```bash
+./gradlew :patches:buildAndroid
+```
 
-## 📚 Everything else
+&nbsp;
+## License
 
-Optionally you can include a button/link in this readme that users can click to add your 
-patches to Morphe (update the links below after creating your new patches repo):
+Licensed under the [GNU General Public License v3.0](LICENSE), with additional conditions under GPLv3 Section 7:
 
-#### How to use these patches
-
-Click here to add these patches to Morphe: https://morphe.software/add-source?github=xyz-user/xyz-patches
-
-Or manually add this repository url as a patch source in Morphe: https://github.com/xyz-user/xyz-patches
-
-### 📙 Contributing
-
-Thank you for considering contributing to Morphe Patches template.  
-You can find the contribution guidelines [here](CONTRIBUTING.md).
-
-### 🛠️ Building
-
-To build Morphe Patches template,
-you can follow the [Morphe documentation](https://github.com/MorpheApp/morphe-documentation).
-
-## 📜 License
-
-Morphe Patches are licensed under the [GNU General Public License v3.0](LICENSE), with additional conditions under GPLv3 Section 7:
-
-- **Name Restriction (7c):** The name **"Morphe"** may not be used for derivative works.  
+- **Name Restriction (7c):** The name **"Morphe"** may not be used for derivative works.
   Derivatives must adopt a distinct identity unrelated to "Morphe."
 
-See the [LICENSE](LICENSE) file for the full GPLv3 terms and the [NOTICE](NOTICE) file for full conditions of GPLv3 Section 7
+See the [LICENSE](LICENSE) and [NOTICE](NOTICE) files for full details.
