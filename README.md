@@ -2,7 +2,7 @@
 
 # docbt-patched-up
 
-**Revived and updated patches for Morphe. Community-driven. GPL-compliant.**
+**Revived and updated patches for Morphe.**
 
 <br>
 
@@ -54,7 +54,7 @@ Contributions are welcome. Please read the [contribution guidelines](CONTRIBUTIN
 
 This project is licensed under the [GNU General Public License v3.0](LICENSE), with additional conditions under GPLv3 Section 7:
 
-- **Attribution (7b):** The name **"docbt"** and original authorship must be preserved in all derivative works and forks. The notice in the [NOTICE](NOTICE) file may not be removed or altered.
+- **Attribution (7b):** The author **"docbt"** and original authorship must be preserved in all derivative works and forks. The notice in the [NOTICE](NOTICE) file may not be removed or altered.
 - **Name Restriction (7c):** The name **"Morphe"** may not be used for derivative works. Derivatives must adopt a distinct identity unrelated to "Morphe."
 
 See the [NOTICE](NOTICE) file for full Section 7 conditions.
