@@ -7,14 +7,11 @@ Revived and updated patches for [Morphe](https://morphe.software).
 
 The goal of this project is to migrate existing patches to Morphe and keep them compatible with the latest version of the original apps. Regular updates — stay tuned.
 
-### Patches
+### Supported Apps & Patches <a name="supported-apps--patches"></a>
 
-#### Google News / Magazines (`com.google.android.apps.magazines`)
-
-| Patch | Description |
-|---|---|
-| Enable Custom Tabs | Opens articles in your default browser instead of the in-app reader |
-| GmsCore Support | Enables Google login via MicroG on renamed-package installations |
+| App | Package | Patches |
+|---|---|---|
+| Google News | `com.google.android.apps.magazines` | Custom Tabs, GMS Support, Extension |
 
 &nbsp;
 ## How to use
