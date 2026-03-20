@@ -52,9 +52,9 @@ Contributions are welcome. Please read the [contribution guidelines](CONTRIBUTIN
 &nbsp;
 ## License
 
-Licensed under the [GNU General Public License v3.0](LICENSE), with additional conditions under GPLv3 Section 7:
+This project is licensed under the [GNU General Public License v3.0](LICENSE), with additional conditions under GPLv3 Section 7:
 
-- **Name Restriction (7c):** The name **"Morphe"** may not be used for derivative works.
-  Derivatives must adopt a distinct identity unrelated to "Morphe."
+- **Attribution (7b):** The name **"docbt"** and original authorship must be preserved in all derivative works and forks. The notice in the [NOTICE](NOTICE) file may not be removed or altered.
+- **Name Restriction (7c):** The name **"Morphe"** may not be used for derivative works. Derivatives must adopt a distinct identity unrelated to "Morphe."
 
-See the [LICENSE](LICENSE) and [NOTICE](NOTICE) files for full details.
+See the [NOTICE](NOTICE) file for full Section 7 conditions.
