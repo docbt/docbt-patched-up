@@ -67,7 +67,11 @@ The goal of this project is to migrate missing ReVanced patches to Morphe and ke
 3. In Morphe Manager settings, enable **Expert Mode** to select patches individually
 4. Select your app and apply the patches:
 
-   **4a. Google News** — all three patches are required:
+   **4a. Google News**
+
+   > [!CAUTION]
+   > All three patches are required. Do not skip any of them.
+
    - **Change package name** *(this repository — applied automatically as a dependency)*
    - **Enable CustomTabs** *(this repository)*
    - **GmsCore Support** *(this repository)*
@@ -104,5 +108,6 @@ This project is licensed under the [GNU General Public License v3.0](LICENSE), w
 
 - **Attribution (7b):** The author **"docbt"** and original authorship must be preserved in all derivative works and forks. The notice in the [NOTICE](NOTICE) file may not be removed or altered.
 - **Name Restriction (7c):** The name **"Morphe"** may not be used for derivative works. Derivatives must adopt a distinct identity unrelated to "Morphe."
+- **Third-party attribution:** The `Change package name` patch is ported from [MorpheApp/morphe-patches](https://github.com/MorpheApp/morphe-patches), originally hard-forked from [ReVanced/revanced-patches](https://github.com/ReVanced/revanced-patches). Both are licensed under GPL v3.
 
 See the [NOTICE](NOTICE) file for full Section 7 conditions.
