@@ -1,3 +1,11 @@
+## [1.0.1](https://github.com/docbt/docbt-patched-up/compare/v1.0.0...v1.0.1) (2026-03-21)
+
+
+### Bug Fixes
+
+* restore PatchListGenerator, regenerate patches-list without example patch ([0ebac66](https://github.com/docbt/docbt-patched-up/commit/0ebac667207d063f5d98e0fed5d8bb96ebfb9dbd))
+* use correct patches-list.json without example patch ([0b16930](https://github.com/docbt/docbt-patched-up/commit/0b1693077c2b687d919b565a0db6bb6ab0771240))
+
 # 1.0.0 (2026-03-20)
 
 
