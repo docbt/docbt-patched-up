@@ -8,7 +8,7 @@ val hideAdsPatch = bytecodePatch(
     name = "Hide ads",
     description = "Hides sponsored ads and Google Ads. Also disables Microsoft Clarity analytics.",
 ) {
-    compatibleWith("com.ebay.kleinanzeigen")
+    compatibleWith("com.ebay.kleinanzeigen" to setOf("2016.9.0"))
 
     execute {
         // Liberty.init() initializes the ad/analytics SDK.

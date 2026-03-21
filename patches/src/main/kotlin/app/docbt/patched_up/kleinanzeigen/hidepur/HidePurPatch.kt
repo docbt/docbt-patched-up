@@ -8,7 +8,7 @@ val hidePurPatch = bytecodePatch(
     name = "Hide Pur",
     description = "Hides the Pur ad-free subscription option from the settings menu.",
 ) {
-    compatibleWith("com.ebay.kleinanzeigen")
+    compatibleWith("com.ebay.kleinanzeigen" to setOf("2016.9.0"))
 
     execute {
         // getShowAdFreeSubscription() returns a boolean controlling Pur visibility.

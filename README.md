@@ -27,7 +27,7 @@ The goal of this project is to migrate missing ReVanced patches to Morphe and ke
 | App | Package | Version | Patches |
 |---|---|---|---|
 | Google News 🎯🌎 | `com.google.android.apps.magazines` | [![Google News](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdocbt%2Fpatched-up%2Fmain%2Fversions.json&query=%24.googleNews&label=&color=blue&style=flat-square)](versions.json) | Custom Tabs, GMS Support |
-| Kleinanzeigen | `com.ebay.kleinanzeigen` | all | Hide Ads, Hide Pur |
+| Kleinanzeigen 🎯 | `com.ebay.kleinanzeigen` | 2016.9.0 | Hide Ads, Hide Pur |
 
 > 🌎 Supports MicroG integration.
 >
