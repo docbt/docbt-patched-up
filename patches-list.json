@@ -1,5 +1,5 @@
 {
-  "version": "1.2.3",
+  "version": "1.2.4",
   "patches": [
     {
       "name": "Change package name",
@@ -74,7 +74,9 @@
       "use": true,
       "dependencies": [],
       "compatiblePackages": {
-        "com.ebay.kleinanzeigen": null
+        "com.ebay.kleinanzeigen": [
+          "2016.9.0"
+        ]
       },
       "options": []
     },
@@ -84,7 +86,9 @@
       "use": true,
       "dependencies": [],
       "compatiblePackages": {
-        "com.ebay.kleinanzeigen": null
+        "com.ebay.kleinanzeigen": [
+          "2016.9.0"
+        ]
       },
       "options": []
     }

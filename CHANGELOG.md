@@ -1,3 +1,10 @@
+## [1.2.4](https://github.com/docbt/patched-up/compare/v1.2.3...v1.2.4) (2026-03-21)
+
+
+### Bug Fixes
+
+* restrict Kleinanzeigen patches to version 2016.9.0 ([8fe9e13](https://github.com/docbt/patched-up/commit/8fe9e13c08aeab5e4b23e026f9ae85dc9f2ac745))
+
 ## [1.2.3](https://github.com/docbt/patched-up/compare/v1.2.2...v1.2.3) (2026-03-21)
 
 
