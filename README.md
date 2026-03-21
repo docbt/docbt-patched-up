@@ -2,7 +2,7 @@
 
 # docbt-patched-up
 
-**Revived and updated patches for Morphe.**
+**Revived and updated ReVanced patches for Morphe.**
 
 <br>
 
