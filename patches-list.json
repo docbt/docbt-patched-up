@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0-dev.1",
+  "version": "v1.0.0-dev.1",
   "patches": [
     {
       "name": "Enable CustomTabs",
@@ -9,18 +9,6 @@
       "compatiblePackages": {
         "com.google.android.apps.magazines": [
           "5.154.0.880997081"
-        ]
-      },
-      "options": []
-    },
-    {
-      "name": "Example Patch",
-      "description": "Example patch to start with.",
-      "use": true,
-      "dependencies": [],
-      "compatiblePackages": {
-        "com.example.app": [
-          "1.0.0"
         ]
       },
       "options": []
