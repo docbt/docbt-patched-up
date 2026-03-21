@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/docbt/patched-up/compare/v1.2.0...v1.2.1) (2026-03-21)
+
+
+### Bug Fixes
+
+* port ChangePackageNamePatch from official MorpheApp/morphe-patches ([140830a](https://github.com/docbt/patched-up/commit/140830afab47df1f6420a076c13a658b4c5e2163))
+
 # [1.2.0](https://github.com/docbt/patched-up/compare/v1.1.0...v1.2.0) (2026-03-21)
 
 

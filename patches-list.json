@@ -1,5 +1,5 @@
 {
-  "version": "1.2.0",
+  "version": "1.2.1",
   "patches": [
     {
       "name": "Change package name",
@@ -32,6 +32,15 @@
           "key": "updateProviders",
           "title": "Update providers",
           "description": "Update provider names declared by the app. Enabling this can fix installation errors, but this can also break features in certain apps.",
+          "required": false,
+          "type": "kotlin.Boolean",
+          "default": false,
+          "values": null
+        },
+        {
+          "key": "updateProvidersStrings",
+          "title": "Update providers strings",
+          "description": "Update additional provider names declared by the app in the strings.xml file. Enabling this can fix installation errors, but this can also break features in certain apps.",
           "required": false,
           "type": "kotlin.Boolean",
           "default": false,
