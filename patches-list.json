@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0-dev.2",
+  "version": "1.0.0-dev.3",
   "patches": [
     {
       "name": "Enable CustomTabs",
@@ -24,6 +24,26 @@
         "com.google.android.apps.magazines": [
           "5.154.0.880997081"
         ]
+      },
+      "options": []
+    },
+    {
+      "name": "Hide Pur",
+      "description": "Hides the Pur ad-free subscription option from the settings menu.",
+      "use": true,
+      "dependencies": [],
+      "compatiblePackages": {
+        "com.ebay.kleinanzeigen": null
+      },
+      "options": []
+    },
+    {
+      "name": "Hide ads",
+      "description": "Hides sponsored ads and Google Ads. Also disables Microsoft Clarity analytics.",
+      "use": true,
+      "dependencies": [],
+      "compatiblePackages": {
+        "com.ebay.kleinanzeigen": null
       },
       "options": []
     }
