@@ -56,7 +56,7 @@ The goal of this project is to migrate existing patches to Morphe and keep them 
 ### Requirements
 
 - [Morphe Manager](https://github.com/MorpheApp/morphe-manager) — the app used to apply patches
-- [MicroG GmsCore](https://morphe.software/microg) — required for Google sign-in on Google News (replaces Google Play Services)
+- [MicroG GmsCore](https://morphe.software/microg) — required for apps that use Google Play Services (e.g. Google sign-in)
 
 ### Steps
 
