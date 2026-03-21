@@ -19,11 +19,7 @@ private const val GMS_CORE_VENDOR = "app.revanced"
 // SHA-1 of Google's release signing certificate (shared across Google apps).
 private const val SPOOFED_PACKAGE_SIGNATURE = "24bb24c05e47e0aefa68a58a766179d9b613a600"
 
-private val gmsCoreSupportResourcePatch = resourcePatch(
-    name = "GmsCore support resources",
-    description = "Patches AndroidManifest.xml so MicroG RE can spoof the original package identity " +
-            "when authenticating with Google's servers.",
-) {
+private val gmsCoreSupportResourcePatch = resourcePatch {
     execute {
         document("AndroidManifest.xml").use { doc ->
             val applicationNode = doc.getElementsByTagName("application").item(0)
