@@ -1,7 +1,7 @@
 {
-  "created_at": "2026-03-21T05:34:28",
-  "description": "# [1.1.0](https://github.com/docbt/patched-up/compare/v1.0.2...v1.1.0) (2026-03-21)\n\n\n### Features\n\n* **kleinanzeigen:** add Hide Ads and Hide Pur patches migrated from ReVanced ([ffb2a99](https://github.com/docbt/patched-up/commit/ffb2a999e0b83e038431b9951e3225a4f93588e0))",
-  "download_url": "https://github.com/docbt/patched-up/releases/download/v1.1.0/patches-1.1.0.mpp",
-  "signature_download_url": "https://github.com/docbt/patched-up/releases/download/v1.1.0/patches-1.1.0.mpp.asc",
-  "version": "1.1.0"
+  "created_at": "2026-03-21T12:15:24",
+  "description": "# [1.2.0](https://github.com/docbt/patched-up/compare/v1.1.0...v1.2.0) (2026-03-21)\n\n\n### Features\n\n* port ChangePackageNamePatch, add as dependency to Google News patches ([ff664bc](https://github.com/docbt/patched-up/commit/ff664bcb442aab6377061914d8cdedd2127ffd61))",
+  "download_url": "https://github.com/docbt/patched-up/releases/download/v1.2.0/patches-1.2.0.mpp",
+  "signature_download_url": "https://github.com/docbt/patched-up/releases/download/v1.2.0/patches-1.2.0.mpp.asc",
+  "version": "1.2.0"
 }

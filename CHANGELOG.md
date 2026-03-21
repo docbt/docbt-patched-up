@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/docbt/patched-up/compare/v1.1.0...v1.2.0) (2026-03-21)
+
+
+### Features
+
+* port ChangePackageNamePatch, add as dependency to Google News patches ([ff664bc](https://github.com/docbt/patched-up/commit/ff664bcb442aab6377061914d8cdedd2127ffd61))
+
 # [1.1.0](https://github.com/docbt/patched-up/compare/v1.0.2...v1.1.0) (2026-03-21)
 
 
