@@ -20,7 +20,7 @@
 &nbsp;
 ## About
 
-The goal of this project is to migrate existing patches to Morphe and keep them compatible with the latest version of the original apps. Regular updates — stay tuned.
+The goal of this project is to migrate missing ReVanced patches to Morphe and keep them compatible with the latest version of the original apps. Regular updates — stay tuned.
 
 ### Supported Apps & Patches <a name="supported-apps--patches"></a>
 
