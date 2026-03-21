@@ -26,16 +26,36 @@ The goal of this project is to migrate existing patches to Morphe and keep them 
 
 | App | Package | Version | Patches |
 |---|---|---|---|
-| Google News | `com.google.android.apps.magazines` | [![Google News](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdocbt%2Fdocbt-patched-up%2Fmain%2Fversions.json&query=%24.googleNews&label=&color=blue&style=flat-square)](versions.json) | Custom Tabs, GMS Support, Extension |
+| Google News | `com.google.android.apps.magazines` | [![Google News](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdocbt%2Fdocbt-patched-up%2Fmain%2Fversions.json&query=%24.googleNews&label=&color=blue&style=flat-square)](versions.json) | Custom Tabs, GMS Support |
+
+&nbsp;
+### Features
+
+<h3>📰 Google News</h3>
+
+| Patch | Description |
+|---|---|
+| 🪄 Custom Tabs | Opens news articles in your default browser, so you can use your ad blocker and browser extensions. |
+| ⚙️ GMS Support | Enables Google sign-in via [MicroG GmsCore](https://github.com/microg/GmsCore) — a free and open-source replacement for Google Play Services. |
 
 &nbsp;
 ## How to use
 
-Click here to add these patches to Morphe:
-**https://morphe.software/add-source?github=docbt/docbt-patched-up**
+### Requirements
 
-Or manually add this URL as a patch source in Morphe:
-**https://github.com/docbt/docbt-patched-up**
+- [Morphe Manager](https://github.com/MorpheApp/morphe-manager) — the app used to apply patches
+- [MicroG GmsCore](https://morphe.software/microg) — required for Google sign-in (replaces Google Play Services)
+
+### Steps
+
+1. Install **Morphe Manager** and set up **MicroG** following the [Morphe MicroG guide](https://morphe.software/microg)
+2. In Morphe Manager, add this repository as a patch source:
+   **https://github.com/docbt/docbt-patched-up**
+   Or use the quick-add link: **https://morphe.software/add-source?github=docbt/docbt-patched-up**
+3. Select Google News and apply the following patches:
+   - **Change package name** *(from the Morphe Patches repository — required)*
+   - **Enable CustomTabs** *(this repository)*
+   - **GmsCore Support** *(this repository)*
 
 &nbsp;
 ## Contributing
@@ -54,6 +74,7 @@ Contributions are welcome. Please read the [contribution guidelines](CONTRIBUTIN
 
 - [ReVanced](https://github.com/ReVanced/revanced-patches) — Original patches (GPL v3)
 - [Morphe](https://morphe.software) — Patcher framework and ecosystem
+- [MicroG GmsCore](https://github.com/microg/GmsCore) — Open-source replacement for Google Play Services
 
 &nbsp;
 ## License
