@@ -69,8 +69,7 @@ The goal of this project is to migrate missing ReVanced patches to Morphe and ke
 
    **4a. Google News**
 
-   > [!CAUTION]
-   > All three patches are required. Do not skip any of them.
+   > ⚠️ **All three patches are required. Do not skip any of them.**
 
    - **Change package name** *(this repository — applied automatically as a dependency)*
    - **Enable CustomTabs** *(this repository)*
