@@ -1,4 +1,4 @@
-rootProject.name = "docbt-patched-up"
+rootProject.name = "patched-up"
 
 pluginManagement {
     repositories {

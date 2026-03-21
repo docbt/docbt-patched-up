@@ -2,7 +2,7 @@ group = "app.docbt.patched_up"
 
 patches {
     about {
-        name = "docbt-patched-up"
+        name = "Patched-Up"
         description = "Revived and updated ReVanced patches for Morphe."
         source = "https://github.com/docbt/docbt-patched-up"
         author = "docbt"
