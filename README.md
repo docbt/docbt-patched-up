@@ -26,7 +26,10 @@ The goal of this project is to migrate existing patches to Morphe and keep them 
 
 | App | Package | Version | Patches |
 |---|---|---|---|
-| Google News | `com.google.android.apps.magazines` | [![Google News](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdocbt%2Fdocbt-patched-up%2Fmain%2Fversions.json&query=%24.googleNews&label=&color=blue&style=flat-square)](versions.json) | Custom Tabs, GMS Support |
+| Google News 🎯🌎 | `com.google.android.apps.magazines` | [![Google News](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdocbt%2Fpatched-up%2Fmain%2Fversions.json&query=%24.googleNews&label=&color=blue&style=flat-square)](versions.json) | Custom Tabs, GMS Support |
+
+> 🌎 Supports MicroG integration.
+> 🎯 This app has a strict requirement to use the version defined in the patch.
 
 &nbsp;
 ### Features
@@ -52,7 +55,8 @@ The goal of this project is to migrate existing patches to Morphe and keep them 
 2. In Morphe Manager, add this repository as a patch source:
    **https://github.com/docbt/patched-up**
    Or use the quick-add link: **https://morphe.software/add-source?github=docbt/patched-up**
-3. Select Google News and apply the following patches:
+3. In Morphe Manager settings, enable **Expert Mode**
+4. Select Google News and apply the following patches:
    - **Change package name** *(from the Morphe Patches repository — required)*
    - **Enable CustomTabs** *(this repository)*
    - **GmsCore Support** *(this repository)*
