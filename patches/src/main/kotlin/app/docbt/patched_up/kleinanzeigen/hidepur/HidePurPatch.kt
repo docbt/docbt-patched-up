@@ -10,7 +10,7 @@ val hidePurPatch = bytecodePatch(
     name = "Hide Pur",
     description = "Hides the Pur ad-free subscription option from the settings menu.",
 ) {
-    compatibleWith("com.ebay.kleinanzeigen" to setOf("2026.12.0"))
+    compatibleWith("com.ebay.kleinanzeigen" to setOf("2026.13.2"))
 
     execute {
         with(InstructionExtensions) {

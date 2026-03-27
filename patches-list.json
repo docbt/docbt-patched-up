@@ -87,7 +87,7 @@
       "dependencies": [],
       "compatiblePackages": {
         "com.ebay.kleinanzeigen": [
-          "2026.12.0"
+          "2026.13.2"
         ]
       },
       "options": []
