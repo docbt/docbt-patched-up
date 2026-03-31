@@ -7,13 +7,6 @@
 * **kleinanzeigen:** bump supported version to 2026.14.0 ([78d5d16](https://github.com/docbt/patched-up/commit/78d5d16b9391b395cfed42d3610490a9cfe1c069))
 * **kleinanzeigen:** set 2026.14.0 as supported version in release  ([df28ba4](https://github.com/docbt/patched-up/commit/df28ba49e3ed3551fa562c4c6854baec403525ea))
 
-## [1.3.2](https://github.com/docbt/patched-up/compare/v1.3.1...v1.3.2) (2026-03-27)
-
-
-### Bug Fixes
-
-* **kleinanzeigen:** bump supported version to 2026.13.2 ([#5](https://github.com/docbt/patched-up/issues/5)) ([2a14b40](https://github.com/docbt/patched-up/commit/2a14b40f781a9a61d2c646d5bf796dbf1f9e8d00))
-
 ## [1.3.1](https://github.com/docbt/patched-up/compare/v1.3.0...v1.3.1) (2026-03-21)
 
 
