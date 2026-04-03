@@ -52,7 +52,7 @@ val enableCustomTabsPatch = bytecodePatch(
             // with const/4 vX, 0x1 so the CustomTabs branch is always taken.
             // Covers click handlers, navigation, ReadNow, and CustomTabsTrampolineActivity.
             val methods = listOf(
-                LajdkFingerprint.method,
+                LajdkFingerprint.methodOrNull,
                 LaedzFingerprint.methodOrNull,
                 LajdrFingerprint.methodOrNull,
                 LajgzFingerprint.methodOrNull,
