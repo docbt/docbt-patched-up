@@ -2,11 +2,23 @@ package app.docbt.patched_up.googlenews.customtabs
 
 import app.docbt.patched_up.all.misc.packagename.changePackageNamePatch
 import app.morphe.patcher.extensions.InstructionExtensions
+import app.morphe.patcher.patch.AppTarget
+import app.morphe.patcher.patch.Compatibility
 import app.morphe.patcher.patch.bytecodePatch
 import com.android.tools.smali.dexlib2.Opcode
 import com.android.tools.smali.dexlib2.iface.instruction.OneRegisterInstruction
 import com.android.tools.smali.dexlib2.iface.instruction.ReferenceInstruction
 import com.android.tools.smali.dexlib2.iface.reference.FieldReference
+
+private val COMPAT = Compatibility(
+    name = "Google News",
+    packageName = "com.google.android.apps.magazines",
+    appIconColor = 0x4285F4,
+    targets = listOf(
+        AppTarget(version = "5.155.0.892577434"),
+        AppTarget(version = "5.155.0.885456612"),
+    ),
+)
 
 @Suppress("unused")
 val enableCustomTabsPatch = bytecodePatch(
@@ -15,7 +27,7 @@ val enableCustomTabsPatch = bytecodePatch(
 ) {
     dependsOn(changePackageNamePatch)
 
-    compatibleWith("com.google.android.apps.magazines" to setOf("5.154.0.880997081"))
+    compatibleWith(COMPAT)
 
     execute {
         with(InstructionExtensions) {
@@ -66,7 +78,7 @@ val enableCustomTabsPatch = bytecodePatch(
                 for (instr in method.implementation!!.instructions) {
                     if (instr.opcode == Opcode.IGET_BOOLEAN) {
                         val ref = (instr as ReferenceInstruction).reference
-                        if (ref is FieldReference && ref.definingClass == "Laecj;" && ref.name == "j") {
+                        if (ref is FieldReference && ref.definingClass == "Ladwy;" && ref.name == "j") {
                             targets.add(index)
                         }
                     }

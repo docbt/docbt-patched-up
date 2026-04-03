@@ -3,6 +3,8 @@ package app.docbt.patched_up.googlenews.gms
 import app.docbt.patched_up.all.misc.packagename.changePackageNamePatch
 import app.morphe.patcher.extensions.InstructionExtensions.addInstruction
 import app.morphe.patcher.extensions.InstructionExtensions.replaceInstruction
+import app.morphe.patcher.patch.AppTarget
+import app.morphe.patcher.patch.Compatibility
 import app.morphe.patcher.patch.bytecodePatch
 import app.morphe.patcher.patch.resourcePatch
 import com.android.tools.smali.dexlib2.Opcode
@@ -15,6 +17,16 @@ import org.w3c.dom.Node
 
 private const val FROM_PACKAGE = "com.google.android.apps.magazines"
 private const val GMS_CORE_VENDOR = "app.revanced"
+
+private val COMPAT = Compatibility(
+    name = "Google News",
+    packageName = FROM_PACKAGE,
+    appIconColor = 0x4285F4,
+    targets = listOf(
+        AppTarget(version = "5.155.0.892577434"),
+        AppTarget(version = "5.155.0.885456612"),
+    ),
+)
 
 // SHA-1 of Google's release signing certificate (shared across Google apps).
 private const val SPOOFED_PACKAGE_SIGNATURE = "24bb24c05e47e0aefa68a58a766179d9b613a600"
@@ -314,7 +326,7 @@ val gmsCoreSupportPatch = bytecodePatch(
 
     dependsOn(changePackageNamePatch)
 
-    compatibleWith("com.google.android.apps.magazines" to setOf("5.154.0.880997081"))
+    compatibleWith(COMPAT)
 
     execute {
         // region 1 — Transform all GMS string references: com.google.* → app.revanced.*

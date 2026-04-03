@@ -1,9 +1,45 @@
-## [1.3.1-dev.2](https://github.com/docbt/patched-up/compare/v1.3.1-dev.1...v1.3.1-dev.2) (2026-04-03)
+# [1.4.0](https://github.com/docbt/patched-up/compare/v1.3.5...v1.4.0) (2026-04-03)
 
 
 ### Bug Fixes
 
-* **kleinanzeigen:** fix fingerprints and bump to 2026.12.0 ([2b8efd9](https://github.com/docbt/patched-up/commit/2b8efd9e790d3c6c1267f857b2899dd4d0623468))
+* remove deprecated use parameter (morphe-patcher 1.3.1)  ([e2867fc](https://github.com/docbt/patched-up/commit/e2867fca349085bd6eda0fcf1d32c92ad1c0ea18)), closes [#2EAD33](https://github.com/docbt/patched-up/issues/2EAD33) [#4285F4](https://github.com/docbt/patched-up/issues/4285F4)
+* use 0xRRGGBB Int format for appIconColor (string rejected by Compatibility) ([714562d](https://github.com/docbt/patched-up/commit/714562dd8440753b57a9e90b33c7c0b436c74fb3))
+
+
+### Features
+
+* trigger release v1.4.0 ([35d1707](https://github.com/docbt/patched-up/commit/35d17070e89bd6679a45cb8747fefa7e22c0729e))
+
+## [1.3.5](https://github.com/docbt/patched-up/compare/v1.3.4...v1.3.5) (2026-04-03)
+
+
+### Bug Fixes
+
+* **googlenews:** correct all IGET_BOOLEAN fingerprints for 5.155.0 ([426243b](https://github.com/docbt/patched-up/commit/426243b0df80b5689c4dc7c4c565a8bba81f6c2c))
+
+## [1.3.4](https://github.com/docbt/patched-up/compare/v1.3.3...v1.3.4) (2026-04-03)
+
+
+### Bug Fixes
+
+* **googlenews:** update fingerprints for 5.155.0.885456612 ([7e3ed22](https://github.com/docbt/patched-up/commit/7e3ed228060ee46a5e00c1e386313802f91405ab))
+
+## [1.3.3](https://github.com/docbt/patched-up/compare/v1.3.2...v1.3.3) (2026-03-31)
+
+
+### Bug Fixes
+
+* **changelog:** remove duplicate v1.3.2 entry ([9c556b7](https://github.com/docbt/patched-up/commit/9c556b79c1426dcf819ed0ae9d2fa52e34cf44f7))
+
+## [1.3.2](https://github.com/docbt/patched-up/compare/v1.3.1...v1.3.2) (2026-03-31)
+
+
+### Bug Fixes
+
+* **kleinanzeigen:** bump supported version to 2026.13.2 ([#5](https://github.com/docbt/patched-up/issues/5)) ([2a14b40](https://github.com/docbt/patched-up/commit/2a14b40f781a9a61d2c646d5bf796dbf1f9e8d00))
+* **kleinanzeigen:** bump supported version to 2026.14.0 ([78d5d16](https://github.com/docbt/patched-up/commit/78d5d16b9391b395cfed42d3610490a9cfe1c069))
+* **kleinanzeigen:** set 2026.14.0 as supported version in release  ([df28ba4](https://github.com/docbt/patched-up/commit/df28ba49e3ed3551fa562c4c6854baec403525ea))
 
 ## [1.3.1](https://github.com/docbt/patched-up/compare/v1.3.0...v1.3.1) (2026-03-21)
 

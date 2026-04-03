@@ -1,16 +1,28 @@
 package app.docbt.patched_up.kleinanzeigen.hidepur
 
 import app.morphe.patcher.extensions.InstructionExtensions
+import app.morphe.patcher.patch.AppTarget
+import app.morphe.patcher.patch.Compatibility
 import app.morphe.patcher.patch.bytecodePatch
 import com.android.tools.smali.dexlib2.Opcode
 import com.android.tools.smali.dexlib2.iface.instruction.OneRegisterInstruction
+
+private val COMPAT = Compatibility(
+    name = "Kleinanzeigen",
+    packageName = "com.ebay.kleinanzeigen",
+    appIconColor = 0x2EAD33,
+    targets = listOf(
+        AppTarget(version = "2026.14.2"),
+        AppTarget(version = "2026.14.0"),
+    ),
+)
 
 @Suppress("unused")
 val hidePurPatch = bytecodePatch(
     name = "Hide Pur",
     description = "Hides the Pur ad-free subscription option from the settings menu.",
 ) {
-    compatibleWith("com.ebay.kleinanzeigen" to setOf("2026.12.0"))
+    compatibleWith(COMPAT)
 
     execute {
         with(InstructionExtensions) {
