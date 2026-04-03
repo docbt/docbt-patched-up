@@ -15,7 +15,7 @@ val enableCustomTabsPatch = bytecodePatch(
 ) {
     dependsOn(changePackageNamePatch)
 
-    compatibleWith("com.google.android.apps.magazines" to setOf("5.154.0.880997081"))
+    compatibleWith("com.google.android.apps.magazines" to setOf("5.155.0.885456612"))
 
     execute {
         with(InstructionExtensions) {
@@ -66,7 +66,7 @@ val enableCustomTabsPatch = bytecodePatch(
                 for (instr in method.implementation!!.instructions) {
                     if (instr.opcode == Opcode.IGET_BOOLEAN) {
                         val ref = (instr as ReferenceInstruction).reference
-                        if (ref is FieldReference && ref.definingClass == "Laecj;" && ref.name == "j") {
+                        if (ref is FieldReference && ref.definingClass == "Ladwy;" && ref.name == "j") {
                             targets.add(index)
                         }
                     }
