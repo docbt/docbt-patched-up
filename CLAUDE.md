@@ -5,6 +5,9 @@
 **Jeder PR muss als Squash Merge zusammengeführt werden**, damit Claude nicht als Contributor erscheint.
 Den Hinweis ⚠️ immer in die PR-Beschreibung schreiben.
 
+**NIEMALS direkt auf `main` pushen** — auch nicht für Docs, Fixes oder CLAUDE.md-Updates.
+Immer: Branch erstellen → PR → User merged als Squash Merge.
+
 ---
 
 ## Kleinanzeigen Versionsupdate
