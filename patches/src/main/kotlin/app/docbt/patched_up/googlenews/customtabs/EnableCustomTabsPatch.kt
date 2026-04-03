@@ -13,7 +13,7 @@ import com.android.tools.smali.dexlib2.iface.reference.FieldReference
 private val COMPAT = Compatibility(
     name = "Google News",
     packageName = "com.google.android.apps.magazines",
-    appIconColor = "#4285F4",
+    appIconColor = 0x4285F4,
     targets = listOf(
         AppTarget(version = "5.155.0.892577434"),
         AppTarget(version = "5.155.0.885456612"),
