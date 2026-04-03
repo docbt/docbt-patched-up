@@ -10,7 +10,7 @@ import com.android.tools.smali.dexlib2.iface.instruction.OneRegisterInstruction
 private val COMPAT = Compatibility(
     name = "Kleinanzeigen",
     packageName = "com.ebay.kleinanzeigen",
-    appIconColor = "#2EAD33",
+    appIconColor = 0x2EAD33,
     targets = listOf(
         AppTarget(version = "2026.14.2"),
         AppTarget(version = "2026.14.0"),
