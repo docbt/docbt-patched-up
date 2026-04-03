@@ -1,3 +1,10 @@
+## [1.3.1-dev.2](https://github.com/docbt/patched-up/compare/v1.3.1-dev.1...v1.3.1-dev.2) (2026-04-03)
+
+
+### Bug Fixes
+
+* **kleinanzeigen:** fix fingerprints and bump to 2026.12.0 ([2b8efd9](https://github.com/docbt/patched-up/commit/2b8efd9e790d3c6c1267f857b2899dd4d0623468))
+
 ## [1.3.1](https://github.com/docbt/patched-up/compare/v1.3.0...v1.3.1) (2026-03-21)
 
 
