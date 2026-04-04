@@ -25,35 +25,33 @@ val removeTrackingParamsPatch = bytecodePatch(
     compatibleWith(COMPAT)
 
     execute {
-        with(InstructionExtensions) {
-            val method = ShareUrlBuilderFingerprint.method
-            val instructions = method.implementation!!.instructions
+        val method = ShareUrlBuilderFingerprint.method
+        val instructions = method.implementation!!.instructions
 
-            // Find all return-object instructions in reverse order so that inserting
-            // instructions before each one does not shift the indices of later ones.
-            val returnIndices = instructions
-                .withIndex()
-                .filter { (_, instr) -> instr.opcode == Opcode.RETURN_OBJECT }
-                .map { (i, instr) -> i to (instr as OneRegisterInstruction).registerA }
-                .toList()
-                .reversed()
+        // Find all return-object instructions in reverse order so that inserting
+        // instructions before each one does not shift the indices of later ones.
+        val returnIndices = instructions
+            .withIndex()
+            .filter { (_, instr) -> instr.opcode == Opcode.RETURN_OBJECT }
+            .map { (i, instr) -> i to (instr as OneRegisterInstruction).registerA }
+            .toList()
+            .reversed()
 
-            for ((index, reg) in returnIndices) {
-                // Strip UTM params from the URL before returning.
-                // Uri.parse(url).buildUpon().clearQuery().build().toString()
-                // Each addInstruction(index, ...) inserts at `index`, pushing previous
-                // insertions down — so we add them in reverse order of desired execution.
-                method.addInstruction(index, "move-result-object v$reg")
-                method.addInstruction(index, "invoke-virtual {v$reg}, Landroid/net/Uri;.toString:()Ljava/lang/String;")
-                method.addInstruction(index, "move-result-object v$reg")
-                method.addInstruction(index, "invoke-virtual {v$reg}, Landroid/net/Uri\$Builder;.build:()Landroid/net/Uri;")
-                method.addInstruction(index, "move-result-object v$reg")
-                method.addInstruction(index, "invoke-virtual {v$reg}, Landroid/net/Uri\$Builder;.clearQuery:()Landroid/net/Uri\$Builder;")
-                method.addInstruction(index, "move-result-object v$reg")
-                method.addInstruction(index, "invoke-virtual {v$reg}, Landroid/net/Uri;.buildUpon:()Landroid/net/Uri\$Builder;")
-                method.addInstruction(index, "move-result-object v$reg")
-                method.addInstruction(index, "invoke-static {v$reg}, Landroid/net/Uri;.parse:(Ljava/lang/String;)Landroid/net/Uri;")
-            }
+        for ((index, reg) in returnIndices) {
+            // Strip UTM params from the URL before returning.
+            // Uri.parse(url).buildUpon().clearQuery().build().toString()
+            // Each addInstruction(index, ...) inserts at `index`, pushing previous
+            // insertions down — so we add them in reverse order of desired execution.
+            method.addInstruction(index, "move-result-object v$reg")
+            method.addInstruction(index, "invoke-virtual {v$reg}, Landroid/net/Uri;.toString:()Ljava/lang/String;")
+            method.addInstruction(index, "move-result-object v$reg")
+            method.addInstruction(index, "invoke-virtual {v$reg}, Landroid/net/Uri\$Builder;.build:()Landroid/net/Uri;")
+            method.addInstruction(index, "move-result-object v$reg")
+            method.addInstruction(index, "invoke-virtual {v$reg}, Landroid/net/Uri\$Builder;.clearQuery:()Landroid/net/Uri\$Builder;")
+            method.addInstruction(index, "move-result-object v$reg")
+            method.addInstruction(index, "invoke-virtual {v$reg}, Landroid/net/Uri;.buildUpon:()Landroid/net/Uri\$Builder;")
+            method.addInstruction(index, "move-result-object v$reg")
+            method.addInstruction(index, "invoke-static {v$reg}, Landroid/net/Uri;.parse:(Ljava/lang/String;)Landroid/net/Uri;")
         }
     }
 }
