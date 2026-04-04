@@ -13,6 +13,7 @@
 [![Gradle](https://img.shields.io/badge/Gradle-8.x-02303A?style=flat-square&logo=gradle)](https://gradle.org)
 [![Patches](https://img.shields.io/badge/Patches-2%20Apps-success?style=flat-square)](#supported-apps--patches)
 
+
 [![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?style=flat-square&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/docbt)
 
 </div>
@@ -27,7 +28,7 @@ The goal of this project is to migrate missing ReVanced patches to Morphe and ke
 | App | Package | Version | Patches |
 |---|---|---|---|
 | Google News 🎯🌎 | `com.google.android.apps.magazines` | [![Google News](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdocbt%2Fpatched-up%2Fmain%2Fversions.json&query=%24.googleNews&label=&color=blue&style=flat-square)](versions.json) | Custom Tabs, GMS Support |
-| Kleinanzeigen 🎯 | `com.ebay.kleinanzeigen` | [![Kleinanzeigen](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdocbt%2Fpatched-up%2Fmain%2Fversions.json&query=%24.kleinanzeigen&label=&color=blue&style=flat-square)](versions.json) | Hide Ads, Hide Pur |
+| Kleinanzeigen 🎯 | `com.ebay.kleinanzeigen` | [![Kleinanzeigen](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdocbt%2Fpatched-up%2Fmain%2Fversions.json&query=%24.kleinanzeigen&label=&color=blue&style=flat-square)](versions.json) | Hide Ads, Hide Pur, Remove Tracking Params |
 
 > 🌎 Supports MicroG integration.
 >
@@ -49,6 +50,7 @@ The goal of this project is to migrate missing ReVanced patches to Morphe and ke
 |---|---|
 | 🚫 Hide Ads | Hides sponsored ads and Google Ads. Also disables Microsoft Clarity analytics. |
 | 🔕 Hide Pur | Hides the Pur ad-free subscription option from the settings menu. |
+| 🔗 Remove Tracking Params | Removes UTM tracking parameters from URLs shared via the in-app share function. |
 
 &nbsp;
 ## How to use
@@ -79,6 +81,7 @@ The goal of this project is to migrate missing ReVanced patches to Morphe and ke
    - **Change package name** *(from the Morphe Patches repository — optional, prevent Google Play from updating)*
    - **Hide Ads** *(this repository)*
    - **Hide Pur** *(this repository)*
+   - **Remove Tracking Params** *(this repository — optional)*
 
 &nbsp;
 ## Contributing
