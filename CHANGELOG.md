@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/docbt/patched-up/compare/v1.5.0...v1.6.0) (2026-04-11)
+
+
+### Features
+
+* **googlenews:** add support for Google News v5.156 ([2bf1417](https://github.com/docbt/patched-up/commit/2bf1417cf2fcafe22af7e59cb58fcb1dc0682553))
+
 # [1.5.0](https://github.com/docbt/patched-up/compare/v1.4.0...v1.5.0) (2026-04-04)
 
 
