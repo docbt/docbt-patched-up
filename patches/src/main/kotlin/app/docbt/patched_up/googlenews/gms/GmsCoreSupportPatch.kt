@@ -109,6 +109,7 @@ private val ACTIONS = setOf(
     "com.google.android.gms.asterism.service.START",
     "com.google.android.gms.audiomodem.service.AudioModemService.START",
     "com.google.android.gms.audit.service.START",
+    "com.google.android.gms.auth.aang.events.services.START",
     "com.google.android.gms.auth.account.authapi.START",
     "com.google.android.gms.auth.account.authenticator.auto.service.START",
     "com.google.android.gms.auth.account.authenticator.chromeos.START",
