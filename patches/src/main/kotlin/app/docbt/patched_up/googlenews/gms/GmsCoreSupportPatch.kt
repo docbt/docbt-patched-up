@@ -1,5 +1,6 @@
 package app.docbt.patched_up.googlenews.gms
 
+import app.docbt.patched_up.all.misc.packagename.changePackageNamePatch
 import app.morphe.patcher.extensions.InstructionExtensions.addInstruction
 import app.morphe.patcher.extensions.InstructionExtensions.replaceInstruction
 import app.morphe.patcher.patch.AppTarget
@@ -318,9 +319,12 @@ private val AUTHORITIES = setOf(
 @Suppress("unused")
 val gmsCoreSupportPatch = bytecodePatch(
     name = "GmsCore support",
-    description = "Allows Google News to sign in via MicroG (GmsCore) instead of Google Play Services.",
+    description = "Allows Google News to sign in via MicroG (GmsCore) instead of Google Play Services " +
+            "when installed under a renamed package.",
 ) {
     dependsOn(gmsCoreSupportResourcePatch)
+
+    dependsOn(changePackageNamePatch)
 
     compatibleWith(COMPAT)
 

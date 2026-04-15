@@ -1,5 +1,6 @@
 package app.docbt.patched_up.googlenews.customtabs
 
+import app.docbt.patched_up.all.misc.packagename.changePackageNamePatch
 import app.morphe.patcher.extensions.InstructionExtensions
 import app.morphe.patcher.patch.AppTarget
 import app.morphe.patcher.patch.Compatibility
@@ -23,6 +24,8 @@ val enableCustomTabsPatch = bytecodePatch(
     name = "Enable CustomTabs",
     description = "Enables CustomTabs to open articles in your default browser.",
 ) {
+    dependsOn(changePackageNamePatch)
+
     compatibleWith(COMPAT)
 
     execute {
