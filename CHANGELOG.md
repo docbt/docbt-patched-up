@@ -1,3 +1,21 @@
+# [1.7.0](https://github.com/docbt/patched-up/compare/v1.6.1...v1.7.0) (2026-04-19)
+
+
+### Bug Fixes
+
+* **googlenews:** add aang auth service action ([7342da2](https://github.com/docbt/patched-up/commit/7342da28614c20d13f8d5aa18653de75e4984ac3))
+* **googlenews:** remove mandatory changePackageNamePatch dependency ([593be02](https://github.com/docbt/patched-up/commit/593be02b379a96d36eb549e8338346119d917239))
+
+
+### Features
+
+* **kleinanzeigen:** add support for version 2026.16.1 ([84fe958](https://github.com/docbt/patched-up/commit/84fe958a4ffadec25359f1f2fa182ac7ed3cc8b8))
+
+
+### Reverts
+
+* **googlenews:** restore changePackageNamePatch dependency ([2f20304](https://github.com/docbt/patched-up/commit/2f20304ae01ec67788791deedac0e87fbe898d53))
+
 ## [1.6.1](https://github.com/docbt/patched-up/compare/v1.6.0...v1.6.1) (2026-04-11)
 
 
