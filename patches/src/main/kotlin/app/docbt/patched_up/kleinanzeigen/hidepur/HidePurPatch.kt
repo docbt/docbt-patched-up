@@ -1,21 +1,17 @@
 package app.docbt.patched_up.kleinanzeigen.hidepur
 
-import app.morphe.patcher.extensions.InstructionExtensions
+import app.morphe.patcher.extensions.InstructionExtensions.addInstructions
 import app.morphe.patcher.patch.AppTarget
 import app.morphe.patcher.patch.Compatibility
 import app.morphe.patcher.patch.bytecodePatch
-import com.android.tools.smali.dexlib2.Opcode
-import com.android.tools.smali.dexlib2.iface.instruction.OneRegisterInstruction
+import app.morphe.patches.all.misc.resources.resourceMappingPatch
+import com.android.tools.smali.dexlib2.iface.instruction.FiveRegisterInstruction
 
 private val COMPAT = Compatibility(
     name = "Kleinanzeigen",
     packageName = "com.ebay.kleinanzeigen",
     appIconColor = 0x2EAD33,
-    targets = listOf(
-        AppTarget(version = "2026.16.1"),
-        AppTarget(version = "2026.14.2"),
-        AppTarget(version = "2026.14.0"),
-    ),
+    targets = listOf(AppTarget(version = "2026.30.0")),
 )
 
 @Suppress("unused")
@@ -25,23 +21,28 @@ val hidePurPatch = bytecodePatch(
 ) {
     compatibleWith(COMPAT)
 
+    // resourceMappingPatch is required whenever a fingerprint uses resourceLiteral(): this patch builds
+    // the resource-name -> id lookup table (from public.xml) that the filter
+    // reads at match time. Omitting this dependency leaves the table empty and
+    // the fingerprint will fail to match with no obvious error pointing here.
+    dependsOn(resourceMappingPatch)
+
     execute {
-        with(InstructionExtensions) {
-            // setupSections() (2026.9.0) / q() (2026.12.0) in SettingsAndHelpFragment:
-            // p7 = showAdFreeSubscription. The single IF_EQZ p7 sends to GONE when false,
-            // VISIBLE when true. Forcing vReg = 0 before IF_EQZ always hides the Pur entry.
-            val method = SetupSectionsPurFingerprint.method
-            var ifEqzIndex = -1
-            var showAdFreeReg = -1
-            for ((i, instr) in method.implementation!!.instructions.withIndex()) {
-                if (instr.opcode == Opcode.IF_EQZ) {
-                    ifEqzIndex = i
-                    showAdFreeReg = (instr as OneRegisterInstruction).registerA
-                    break
-                }
-            }
-            check(ifEqzIndex != -1) { "IF_EQZ not found in setupSections/q" }
-            method.addInstruction(ifEqzIndex, "const/4 v$showAdFreeReg, 0x0")
+        SetupSectionsPurFingerprint.let {
+            // instructionMatches[1] = the second filter above (the setVisibility
+            // call for the Pur row specifically, not just any setVisibility call).
+            val setVisibilityMatch = it.instructionMatches[1]
+            val invoke = setVisibilityMatch.getInstruction<FiveRegisterInstruction>()
+            val visibilityArgRegister = invoke.registerD // the `int` visibility arg register, not the View receiver
+
+            // const/16, not const/4: const/4's literal is a signed 4-bit value
+            // (range -8..7), and View.GONE = 8 overflows that by exactly one.
+            // Using const/4 here compiles to invalid smali and fails silently
+            // downstream as "Collection is empty" during instruction assembly.
+            it.method.addInstructions(
+                setVisibilityMatch.index,
+                "const/16 v$visibilityArgRegister, 0x8", // View.GONE
+            )
         }
     }
 }
