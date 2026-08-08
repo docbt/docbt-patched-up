@@ -12,6 +12,7 @@ private val COMPAT = Compatibility(
     packageName = "com.ebay.kleinanzeigen",
     appIconColor = 0x2EAD33,
     targets = listOf(
+        AppTarget(version = "2026.27.0"),
         AppTarget(version = "2026.16.1"),
         AppTarget(version = "2026.14.2"),
         AppTarget(version = "2026.14.0"),
@@ -30,6 +31,8 @@ val hidePurPatch = bytecodePatch(
             // setupSections() (2026.9.0) / q() (2026.12.0) in SettingsAndHelpFragment:
             // p7 = showAdFreeSubscription. The single IF_EQZ p7 sends to GONE when false,
             // VISIBLE when true. Forcing vReg = 0 before IF_EQZ always hides the Pur entry.
+            // const/4 only encodes registers v0-v15; since 2026.27.0 the param sits in
+            // v21 (p7), so const/16 is required for register-agnostic behavior.
             val method = SetupSectionsPurFingerprint.method
             var ifEqzIndex = -1
             var showAdFreeReg = -1
@@ -41,7 +44,7 @@ val hidePurPatch = bytecodePatch(
                 }
             }
             check(ifEqzIndex != -1) { "IF_EQZ not found in setupSections/q" }
-            method.addInstruction(ifEqzIndex, "const/4 v$showAdFreeReg, 0x0")
+            method.addInstruction(ifEqzIndex, "const/16 v$showAdFreeReg, 0x0")
         }
     }
 }
