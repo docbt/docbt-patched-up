@@ -21,6 +21,7 @@ kotlin {
 dependencies {
     // Used by JsonGenerator.
     implementation(libs.gson)
+    implementation(libs.morphe.patches.library)
 }
 
 tasks {

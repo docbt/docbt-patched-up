@@ -1,9 +1,10 @@
 package app.docbt.patched_up.kleinanzeigen.hidepur
 
-import app.morphe.patcher.extensions.InstructionExtensions
+import app.morphe.patcher.extensions.InstructionExtensions.addInstructions
 import app.morphe.patcher.patch.AppTarget
 import app.morphe.patcher.patch.Compatibility
 import app.morphe.patcher.patch.bytecodePatch
+import app.morphe.patches.all.misc.resources.resourceMappingPatch
 import com.android.tools.smali.dexlib2.Opcode
 import com.android.tools.smali.dexlib2.iface.instruction.OneRegisterInstruction
 
@@ -11,11 +12,7 @@ private val COMPAT = Compatibility(
     name = "Kleinanzeigen",
     packageName = "com.ebay.kleinanzeigen",
     appIconColor = 0x2EAD33,
-    targets = listOf(
-        AppTarget(version = "2026.16.1"),
-        AppTarget(version = "2026.14.2"),
-        AppTarget(version = "2026.14.0"),
-    ),
+    targets = listOf(AppTarget(version = "2026.36.0")),
 )
 
 @Suppress("unused")
@@ -24,24 +21,27 @@ val hidePurPatch = bytecodePatch(
     description = "Hides the Pur ad-free subscription option from the settings menu.",
 ) {
     compatibleWith(COMPAT)
+    dependsOn(resourceMappingPatch)
 
     execute {
-        with(InstructionExtensions) {
-            // setupSections() (2026.9.0) / q() (2026.12.0) in SettingsAndHelpFragment:
-            // p7 = showAdFreeSubscription. The single IF_EQZ p7 sends to GONE when false,
-            // VISIBLE when true. Forcing vReg = 0 before IF_EQZ always hides the Pur entry.
-            val method = SetupSectionsPurFingerprint.method
-            var ifEqzIndex = -1
-            var showAdFreeReg = -1
-            for ((i, instr) in method.implementation!!.instructions.withIndex()) {
-                if (instr.opcode == Opcode.IF_EQZ) {
-                    ifEqzIndex = i
-                    showAdFreeReg = (instr as OneRegisterInstruction).registerA
-                    break
-                }
+        HidePurEligibilityFingerprint.let {
+            val method = it.method
+            val instructions = method.implementation!!.instructions.toList()
+            val literalIndex = it.instructionMatches[0].index
+
+            // The Pur row is only appended inside `if (eligible) { list.add(...) }`.
+            // Walk backward from the ka_gbl_pur reference to find that specific
+            // gate, not forward from the top of the method.
+            val branchIndex = (literalIndex downTo 0).first { i ->
+                instructions[i].opcode == Opcode.IF_EQZ || instructions[i].opcode == Opcode.IF_NEZ
             }
-            check(ifEqzIndex != -1) { "IF_EQZ not found in setupSections/q" }
-            method.addInstruction(ifEqzIndex, "const/4 v$showAdFreeReg, 0x0")
+            val gateReg = (instructions[branchIndex] as OneRegisterInstruction).registerA
+
+            // Force the gate to always take the "ineligible" branch, regardless of
+            // whether the compiler emitted IF_EQZ or IF_NEZ for this check.
+            val forceValue = if (instructions[branchIndex].opcode == Opcode.IF_EQZ) "0x0" else "0x1"
+
+            method.addInstructions(branchIndex, "const/4 v$gateReg, $forceValue")
         }
     }
 }
